@@ -1,32 +1,33 @@
 {
   "files": {
-    "main.css": "/saturn-v-infographic/static/css/main.1955f6f2.chunk.css",
-    "main.js": "/saturn-v-infographic/static/js/main.db0c3fb6.chunk.js",
-    "main.js.map": "/saturn-v-infographic/static/js/main.db0c3fb6.chunk.js.map",
+    "main.css": "/saturn-v-infographic/static/css/main.9042e33f.chunk.css",
+    "main.js": "/saturn-v-infographic/static/js/main.0196b5a6.chunk.js",
+    "main.js.map": "/saturn-v-infographic/static/js/main.0196b5a6.chunk.js.map",
     "runtime-main.js": "/saturn-v-infographic/static/js/runtime-main.aca10c6a.js",
     "runtime-main.js.map": "/saturn-v-infographic/static/js/runtime-main.aca10c6a.js.map",
     "static/css/2.de424728.chunk.css": "/saturn-v-infographic/static/css/2.de424728.chunk.css",
-    "static/js/2.7965bfe0.chunk.js": "/saturn-v-infographic/static/js/2.7965bfe0.chunk.js",
-    "static/js/2.7965bfe0.chunk.js.map": "/saturn-v-infographic/static/js/2.7965bfe0.chunk.js.map",
+    "static/js/2.389bbfcf.chunk.js": "/saturn-v-infographic/static/js/2.389bbfcf.chunk.js",
+    "static/js/2.389bbfcf.chunk.js.map": "/saturn-v-infographic/static/js/2.389bbfcf.chunk.js.map",
     "index.html": "/saturn-v-infographic/index.html",
-    "precache-manifest.889302fbee1a1a296c1c0cea28bf1ace.js": "/saturn-v-infographic/precache-manifest.889302fbee1a1a296c1c0cea28bf1ace.js",
+    "precache-manifest.c60a5bd748f195290bfb40f6cb2b8c86.js": "/saturn-v-infographic/precache-manifest.c60a5bd748f195290bfb40f6cb2b8c86.js",
     "service-worker.js": "/saturn-v-infographic/service-worker.js",
     "static/css/2.de424728.chunk.css.map": "/saturn-v-infographic/static/css/2.de424728.chunk.css.map",
-    "static/css/main.1955f6f2.chunk.css.map": "/saturn-v-infographic/static/css/main.1955f6f2.chunk.css.map",
-    "static/js/2.7965bfe0.chunk.js.LICENSE.txt": "/saturn-v-infographic/static/js/2.7965bfe0.chunk.js.LICENSE.txt",
+    "static/css/main.9042e33f.chunk.css.map": "/saturn-v-infographic/static/css/main.9042e33f.chunk.css.map",
+    "static/js/2.389bbfcf.chunk.js.LICENSE.txt": "/saturn-v-infographic/static/js/2.389bbfcf.chunk.js.LICENSE.txt",
     "static/media/SaturnV-Command.svg": "/saturn-v-infographic/static/media/SaturnV-Command.4f0731b0.svg",
     "static/media/SaturnV-Engines.svg": "/saturn-v-infographic/static/media/SaturnV-Engines.a9d2c3f9.svg",
     "static/media/SaturnV-First-Stage.svg": "/saturn-v-infographic/static/media/SaturnV-First-Stage.cc12043a.svg",
     "static/media/SaturnV-LRV.svg": "/saturn-v-infographic/static/media/SaturnV-LRV.80014f73.svg",
     "static/media/SaturnV-Launch-Escape.svg": "/saturn-v-infographic/static/media/SaturnV-Launch-Escape.bd0070ae.svg",
     "static/media/SaturnV-Second-Stage.svg": "/saturn-v-infographic/static/media/SaturnV-Second-Stage.fec72647.svg",
-    "static/media/SaturnV-Third-Stage.svg": "/saturn-v-infographic/static/media/SaturnV-Third-Stage.ab383be1.svg"
+    "static/media/SaturnV-Third-Stage.svg": "/saturn-v-infographic/static/media/SaturnV-Third-Stage.ab383be1.svg",
+    "static/media/StatueOfLiberty.png": "/saturn-v-infographic/static/media/StatueOfLiberty.c7e2ec1e.png"
   },
   "entrypoints": [
     "static/js/runtime-main.aca10c6a.js",
     "static/css/2.de424728.chunk.css",
-    "static/js/2.7965bfe0.chunk.js",
-    "static/css/main.1955f6f2.chunk.css",
-    "static/js/main.db0c3fb6.chunk.js"
+    "static/js/2.389bbfcf.chunk.js",
+    "static/css/main.9042e33f.chunk.css",
+    "static/js/main.0196b5a6.chunk.js"
   ]
 }
