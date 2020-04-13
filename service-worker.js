@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/saturn-v-infographic/precache-manifest.c60a5bd748f195290bfb40f6cb2b8c86.js"
+  "/saturn-v-infographic/precache-manifest.e179b0a5eea1f1b931d65d8deb2eaff3.js"
 );
 
 self.addEventListener('message', (event) => {
