@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f346f15df3e081936a8da427bfdccb00",
+    "revision": "2313b91308c26812792e9481bda10cb0",
     "url": "/saturn-v-infographic/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/saturn-v-infographic/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "ef126ce564c321229b1e",
-    "url": "/saturn-v-infographic/static/css/main.1716a67f.chunk.css"
+    "revision": "bca6aacb7059c9a9a2b6",
+    "url": "/saturn-v-infographic/static/css/main.db4e2915.chunk.css"
   },
   {
     "revision": "b4f4aa3d67377e52df54",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/saturn-v-infographic/static/js/2.30c2056d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ef126ce564c321229b1e",
-    "url": "/saturn-v-infographic/static/js/main.eeec0abc.chunk.js"
+    "revision": "bca6aacb7059c9a9a2b6",
+    "url": "/saturn-v-infographic/static/js/main.550a4b42.chunk.js"
   },
   {
     "revision": "83999c408c8a705ac9f9",
