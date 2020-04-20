@@ -98,3 +98,7 @@ footer h6 {
 .blue {
   background: linear-gradient(135deg, #5ee7df 0%, #4a78da 100%);
 }
+
+.gray {
+  background-color: gray;
+}

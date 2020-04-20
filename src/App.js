@@ -13,12 +13,16 @@ import Modal from 'react-bootstrap/Modal'
 import Popover from 'react-bootstrap/Popover'
 import { useTransition, useSpring, useChain, useTrail, animated } from 'react-spring'
 import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 import Carousel from 'react-bootstrap/Carousel'
 import Form from 'react-bootstrap/Form'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import ListGroup from 'react-bootstrap/ListGroup'
 import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import {isMobile} from 'react-device-detect';
 import SvgLines from 'react-mt-svg-lines';
 import { Waypoint } from 'react-waypoint';
+import StarfieldAnimation from 'react-starfield-animation'
 import SaturnVFirstStage from './assets/SaturnV-First-Stage.svg';
 import SaturnVSecondStage from './assets/SaturnV-Second-Stage.svg';
 import SaturnVThirdStage from './assets/SaturnV-Third-Stage.svg';
@@ -28,6 +32,7 @@ import SaturnVEscape from './assets/SaturnV-Launch-Escape.svg';
 import SaturnVEngines from './assets/SaturnV-Engines.svg';
 import StatueOfLiberty from './assets/StatueOfLiberty-min.png'
 import FlightBackground from './assets/Flight-Background.svg'
+import UserSVG from './assets/user.svg'
 import {ReactComponent as FlightLaunch} from './assets/Flight-Launch.svg'
 import {ReactComponent as FlightEarthOrbit} from './assets/Flight-Earth-Orbit.svg'
 import {ReactComponent as FlightLunarInjection} from './assets/Flight-Lunar-Injection.svg'
@@ -51,7 +56,6 @@ function App() {
     x: toggle ? 0 : 20,
     height: toggle ? 80 : 0,
     from: { opacity: 0, x: 20, height: 0 },
-    onRest: () => {setStopScroll(false)}
   })
 
   /* Clickable Saturn V */
@@ -260,7 +264,7 @@ function App() {
   };
 
   return (
-    <div className="App" style={stopScrollStyle}>
+    <div className="App">
             <link
         rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -278,9 +282,26 @@ function App() {
             </animated.div>
           ))}
         </div>
+        <StarfieldAnimation
+        depth={150}
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%'
+        }}
+        ></StarfieldAnimation>
       </div>
       <Navbar fixed="top" expand="lg" variant="dark" bg="dark">
         <Navbar.Brand href="#" className="header">SATURN V</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#stage-info">Stage Information</Nav.Link>
+            <Nav.Link href="#fp-heading">Flight Path</Nav.Link>
+            <Nav.Link href="#mh-heading">Mission History</Nav.Link>
+            <Nav.Link href="#astronauts">Astronauts</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
       <header className="App-header">
         <Container id="containerNoMargin">
@@ -294,7 +315,7 @@ function App() {
               </Alert>
             </div>
           }
-          <div className="heading-wrapper"><h1 className="heading">Stage Information</h1></div>
+          <div id="stage-info" className="heading-wrapper"><h1 className="heading">Stage Information</h1></div>
           <Row className="stage-info-wrapper">
             <Col lg="2">
               <div className="saturn-v-container">
@@ -365,7 +386,7 @@ function App() {
                         <h1 className="subheading">
                           {stageNum === 1 ? (<span>Launch Escape</span>)
                           : stageNum === 2 ? (<span>Command Module</span>)
-                          : stageNum === 3 ? (<span>Lunar Rover Vehicle</span>)
+                          : stageNum === 3 ? (<span>Lunar Module</span>)
                           : stageNum === 4 ? (<span>3rd Stage</span>)
                           : stageNum === 5 ? (<span>2nd Stage</span>)
                           : stageNum === 6 ? (<span>1st Stage</span>)
@@ -394,44 +415,44 @@ function App() {
                             <img src={StatueOfLiberty} className="statue" alt="Statue of Liberty" />
                           </Col>
                           <Col sm="8" className="align-text-left">
-                            <p>This is the default page. Click on the Saturn V or use the navigation buttons below to view detailed information on each stage/part.</p>
+                            <p>This is the Saturn V, the rocket that carried man to the Moon. It was 363 ft tall, with a diamter of 33 ft. In comparison, the Statue of Liberty is 305 ft tall.</p><br></br><p>Click on the Saturn V or use the navigation buttons below to view detailed information on each stage/part.</p>
                           </Col>
                         </div>
                       </div>
                     
                     ) : stageNum === 1 ? ( 
                       <div className="info-content-wrapper">
-                        This is LE.
+                        This is the launch escape system, which is used to propel the crew module away from the rocket if an anomoly were to occur, whether on the pad or during launch. The rocket motors could deliver 667 kN of force, and could be activated manually. This was jettisoned shortly after the first stage seperated.
                       </div>
                     
                     ) : stageNum === 2 ? ( 
                       <div className="info-content-wrapper">
-                        This is CM.
+                        This is the command and service module, built by North American Aviation, which carried the astronauts themselves. It consists of of the command module, used for reentry, and the service module which houses electrical, propulsion, and other various equipment.
                       </div>
                     
                     ) : stageNum === 3 ? ( 
                       <div className="info-content-wrapper">
-                        This is LRV.
+                        This is the lunar module, built by Grumman Aircraft. It was used to descend astronauts to the surface and back. It would also act as a "lifeboat" if the command and service module were to fail. It was made of of primarily two parts: the descent and ascent stages. The lunar module also carries the Lunar Roving Vehicle, made by Boeing and General Motors.
                       </div>
                     
                     ) : stageNum === 4 ? ( 
                       <div className="info-content-wrapper">
-                        This is 3rd stage.
+                        This is the 3rd stage, also known as S-IVB. It was build by Douglas Aircraft Company in California, and had to be transported by barge to the lauch site for integration. It was 58.6 ft tall and 21.7 ft in diameter. The most notable difference compared to the first two stages is that it's engine was able to be restarted, allowing it to perform multiple burns to complete the Earth parking orbit and translunar injection.
                       </div>
                     
                     ) : stageNum === 5 ? ( 
                       <div className="info-content-wrapper">
-                        This is 2nd stage.
+                        This is the 2nd stage, also known as S-II. It was built by North American Aviation in California, and had to be transported by barge to the lauch site for integration. It was 81.6 ft tall and 33 ft in diameter. Fully fulled, it weighed about 1,060,000 pounds.
                       </div>
                     
                     ) : stageNum === 6 ? (
                       <div className="info-content-wrapper">
-                        This is 1st stage.
+                        This is the 1st stage, also known as S-IC. It was built by Boeing in New Orleans, and had to be transported by barge to the lauch site for integration. It was 138 ft tall and 33 ft in diameter. Fully fulled, it weighed about 5,100,000 pounds.
                       </div>
                     
                     ) : stageNum === 7 && 
                       <div className="info-content-wrapper">
-                        This is engines.
+                        The 1st stage was propelled by 5 F-1 Engines. Developed by Rocketdyne, these are gas generator-cycle engines that remain the most powerful single combustion chamber liquid-propellant engine ever developed, each capable of producing 1,522,000 pounds of force at sea level. They were 18.5 ft long and had a diameter of 12.2 ft.
                       </div>
                     }
                     <Waypoint onLeave={showFlightPath}></Waypoint>
@@ -533,37 +554,37 @@ function App() {
               <Carousel.Item>
                 <h1 className="flight-info-header">Launch</h1>
                 <div className="flight-info-body">
-                  <p>This is launch body.</p>
+                  <p>The first, second, and third stage would lift the rocket to a parking orbit of 191.1km with a velocity of 17,432 mph. It took 12 seconds for the rocket to clear the launch tower.</p>
                 </div>
               </Carousel.Item>
               <Carousel.Item>
                 <h1 className="flight-info-header">Earth Orbit</h1>
                 <div className="flight-info-body">
-                  <p>This is earth orbit body.</p>
+                  <p>The remaining spacecraft would orbit earth one and a half times while preparing for translunar injection. During this time, the third stage remained attached.</p>
                 </div>
               </Carousel.Item>
               <Carousel.Item>
                 <h1 className="flight-info-header">Translunar Injection</h1>
                 <div className="flight-info-body">
-                  <p>This is translunar injection body.</p>
+                  <p>The third stage burned for nearly six minutes to approach Earth's escape velocity. 40 minutes into the translunar injection, the command and service module would separate from the third stage and dock with the lunar module.</p>
                 </div>
               </Carousel.Item>
               <Carousel.Item>
                 <h1 className="flight-info-header">Lunar Orbit & Landing</h1>
                 <div className="flight-info-body">
-                  <p>This is lunar orbit, landing, and launch body.</p>
+                  <p>Two burns were performed to bring the spacecraft to a lunar parking orbit. Then two crew members would enter the lunar module and perform land on the surface. When leaving the lunar surface, the descent stage was detached while the ascent stage fired.</p>
                 </div>
               </Carousel.Item>
               <Carousel.Item>
                 <h1 className="flight-info-header">Transearth Injection</h1>
                 <div className="flight-info-body">
-                  <p>This is transearth injection body.</p>
+                  <p>Using similar concepts as the translunar injection, this manuever was performed by the engine on the service module to bring the spacecraft towards Earth from a parking orbit around the Moon.</p>
                 </div>
               </Carousel.Item>
               <Carousel.Item>
                 <h1 className="flight-info-header">Re-entry</h1>
                 <div className="flight-info-body">
-                  <p>This is re-entry body.</p>
+                  <p>The command module seperates from the service module, and then begins to reenter Earth's atmosphere at a velocity of about 9337 mph. At 24,000 ft the heatshield jettisoned to allow the parachutes to deploy.</p>
                 </div>
               </Carousel.Item>
             </Carousel>
@@ -600,7 +621,7 @@ function App() {
                   </div>
                 </div>
                 {MHOpen && 
-                <Container><p>Click on the mission boxes for more detail.</p></Container>
+                <Container><p>Click on the mission boxes for more details.</p></Container>
                 }
               </div>
             </Container>
@@ -610,99 +631,125 @@ function App() {
                 onHide={() => setModalShow1(false)}
                 heading="Apollo 4"
               >
-                <p>This is 1.</p>
+                <h4>Launched November 9, 1967</h4>
+                <h4>Landed November 9, 1967</h4>
+                <p>Uncrewed test flight.</p>
               </MHModal>
               <MHModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
                 heading="Apollo 6"
               >
-                <p>This is 2.</p>
+                <h4>Launched April 4, 1968</h4>
+                <h4>Landed April 4, 1968</h4>
+                <p>Uncrewed test flight. Two engines in the second stage shut down early which prevented the third stage engines from restarting.</p>
               </MHModal>
               <MHModal
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
                 heading="Apollo 8"
               >
-                <p>This is 3.</p>
+                <h4>Launched December 21, 1968</h4>
+                <h4>Landed December 27, 1968</h4>
+                <p>First crewed flight. Source of the famous "Earthrise" photo.</p>
               </MHModal>
               <MHModal
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
                 heading="Apollo 9"
               >
-                <p>This is 4.</p>
+                <h4>Launched March 3, 1969</h4>
+                <h4>Landed March 13, 1969</h4>
+                <p>First flight with the full Saturn V rocket (previous launches did not have the lunar module).</p>
               </MHModal>
               <MHModal
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
                 heading="Apollo 10"
               >
-                <p>This is 5.</p>
+                <h4>Launched May 18, 1969</h4>
+                <h4>Landed May 26, 1969</h4>
+                <p>F mission ("dress rehersal") for landing on the moon.</p>
               </MHModal>
               <MHModal
                 show={modalShow6}
                 onHide={() => setModalShow6(false)}
                 heading="Apollo 11"
               >
-                <p>This is 6.</p>
+                <h4>Launched July 16, 1969</h4>
+                <h4>Landed July 24, 1969</h4>
+                <p>First manned landing on the moon, on the Sea of Tranquility.</p>
               </MHModal>
               <MHModal
                 show={modalShow7}
                 onHide={() => setModalShow7(false)}
                 heading="Apollo 12"
               >
-                <p>This is 7.</p>
+                <h4>Launched November 14, 1969</h4>
+                <h4>Landed November 24, 1969</h4>
+                <p>Lunar landing at Ocean of Storms. A color television camera was brought to the surface, but was destroyed when accidentally pointed at the sun.</p>
               </MHModal>
               <MHModal
                 show={modalShow8}
                 onHide={() => setModalShow8(false)}
                 heading="Apollo 13"
               >
-                <p>This is 8.</p>
+                <h4>Launched April 11, 1970</h4>
+                <h4>Landed April 17, 1970</h4>
+                <p>Lunar landing aborted after an oxygen tank ruptured in the service module.</p>
               </MHModal>
               <MHModal
                 show={modalShow9}
                 onHide={() => setModalShow9(false)}
                 heading="Apollo 14"
               >
-                <p>This is 9.</p>
+                <h4>Launched January 31, 1971</h4>
+                <h4>Landed February 9, 1971</h4>
+                <p>Lunar landing at the Fra Mauro highlands. Shepard hit two golf balls on the lunar surface.</p>
               </MHModal>
               <MHModal
                 show={modalShow10}
                 onHide={() => setModalShow10(false)}
                 heading="Apollo 15"
               >
-                <p>This is 10.</p>
+                <h4>Launched July 26, 1971</h4>
+                <h4>Landed August 7, 1971</h4>
+                <p>Lunar landing near Hadley Rille. First use of the Lunar Roving Vehicle.</p>
               </MHModal>
               <MHModal
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
                 heading="Apollo 16"
               >
-                <p>This is 11.</p>
+                <h4>Launched April 16, 1972</h4>
+                <h4>Landed April 27, 1972</h4>
+                <p>Lunar landing in the highlands.</p>
               </MHModal>
               <MHModal
                 show={modalShow12}
                 onHide={() => setModalShow12(false)}
                 heading="Apollo 17"
               >
-                <p>This is 12.</p>
+                <h4>Launched December 7, 1972</h4>
+                <h4>Landed December 19, 1972</h4>
+                <p>Final lunar landing. Currently holds the record for the longest Moon landing.</p>
               </MHModal>
               <MHModal
                 show={modalShow13}
                 onHide={() => setModalShow13(false)}
                 heading="SkyLab 1"
               >
-                <p>This is 13.</p>
+                <h4>Launched May 14, 1973</h4>
+                <h4>Reentered July 11, 1979</h4>
+                <p>Launch of the first United States space station.</p>
               </MHModal>
             </>
           </Row>
-          <div id="mh-heading" className="heading-wrapper"><h1 className="heading">Astronauts That Flew on Saturn V</h1></div>
+          <div id="astronauts" className="heading-wrapper"><h1 className="heading">Astronauts That Flew on Saturn V</h1></div>
           <Row>
             <Container className="mhp-outer-container">
               <div className="split">
-                <div className="list">
+                <Col md={6} className="list">
                   {dataPeople.map(( item ) => {
                     if(!isSwitchOn || (isSwitchOn && item.moonwalked)) {
                     if(item.id === "Navy" && showNavy) {
@@ -728,7 +775,7 @@ function App() {
                           }
                         >
                           <div className="lg-square navy">
-
+                            <img src={UserSVG} />
                           </div>
                         </OverlayTrigger>
                       )
@@ -755,7 +802,7 @@ function App() {
                           }
                         >
                           <div className="lg-square civilian">
-                            
+                            <img src={UserSVG} />
                           </div>
                         </OverlayTrigger> 
                       )
@@ -782,15 +829,27 @@ function App() {
                           }
                         >
                           <div className="lg-square airforce">
-                            
+                            <img src={UserSVG} />
                           </div>
                         </OverlayTrigger>
                       )
+                    } else {
+                      return (
+                        <div className="lg-square gray">
+                          <img src={UserSVG} />
+                        </div>
+                      )
                     }
+                    } else {
+                      return (
+                        <div className="lg-square gray">
+                          <img src={UserSVG} />
+                        </div>
+                      )
                     }
                     })}
-                </div>
-                <div className="legend-side-wrapper">
+                </Col>
+                <Col md={4} className="legend-side-wrapper">
                   <div className="legend-outer-container-2">
                     <div className="legend-wrapper-2">
                       <div className="legend-item-container" onClick={() => toggleShowCivilian()}>
@@ -815,13 +874,33 @@ function App() {
                       checked={isSwitchOn}
                     />
                   </Form>
-                </div>
+                </Col>
               </div>
             </Container>
           </Row>
         </Container>
       </header>
       <footer>
+        <Jumbotron fluid>
+          <Container>
+            <h1>Sources</h1>
+            <ListGroup variant="flush">
+              <ListGroup.Item><a href="https://www.boeing.com/history/products/saturn-v-moon-rocket.page">Boeing - Saturn V</a></ListGroup.Item>
+              <ListGroup.Item><a href="https://history.nasa.gov/afj//ap08fj/pdf/sa503-flightmanual.pdf">NASA - Saturn V Flight Manual</a></ListGroup.Item>
+              <ListGroup.Item><a href="https://historicspacecraft.com/Rockets_Saturn_5.html">Historic Spacecraft - Saturn V Stages</a></ListGroup.Item>
+              <ListGroup.Item><a href="https://history.nasa.gov/ap11ann/astrobios.htm#other">NASA - Apollo Astronaut Biographys</a></ListGroup.Item>
+              <ListGroup.Item><a href="https://airandspace.si.edu/multimedia-gallery/5317hjpg">Air & Space Museum - Lunar Flight Path</a></ListGroup.Item>
+            </ListGroup>
+            <h1>Attributions</h1>
+            <ListGroup variant="flush">
+              <ListGroup.Item><a href="https://freesvg.org/saturn-v-rocket">Saturn V SVG - OpenClipart, Public Domain</a></ListGroup.Item>
+              <ListGroup.Item><a href="https://unsplash.com/@aussieactive?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge">Statue of Liberty - AussieActive on Unsplash</a></ListGroup.Item>
+              <ListGroup.Item><a href="https://commons.wikimedia.org/wiki/File:%C3%86toms_-_Earth.svg">Earth SVG - Designed by Ætoms from Flaticon</a></ListGroup.Item>
+              <ListGroup.Item><a href="https://www.flaticon.com/free-icon/moon_2530880?term=moon&page=1&position=28">Moon SVG - Designed by Good Ware from Flaticon</a></ListGroup.Item>
+              <ListGroup.Item><a href="https://www.flaticon.com/free-icon/user_747376?term=person&page=1&position=3">Person SVG - Designed by Freepik from Flaticon</a></ListGroup.Item>
+            </ListGroup>
+          </Container>
+        </Jumbotron>
         <h6>Made for ENGR 2367.01H</h6>
       </footer>
     </div>
