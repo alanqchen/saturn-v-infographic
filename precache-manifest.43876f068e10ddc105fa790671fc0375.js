@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "088e247bc646bd5d60b3902c26653c9d",
+    "revision": "2b15a9dbaf348fac4ea25dd40db38802",
     "url": "/saturn-v-infographic/index.html"
   },
   {
-    "revision": "e62b0a8b438e0bffba65",
+    "revision": "42f22dc9de12567afb7e",
     "url": "/saturn-v-infographic/static/css/2.de424728.chunk.css"
   },
   {
-    "revision": "7a12f5bd031d663cbedc",
-    "url": "/saturn-v-infographic/static/css/main.be169d2d.chunk.css"
+    "revision": "6b61f8b33ec7f25af96b",
+    "url": "/saturn-v-infographic/static/css/main.24b4dbeb.chunk.css"
   },
   {
-    "revision": "e62b0a8b438e0bffba65",
-    "url": "/saturn-v-infographic/static/js/2.932a4479.chunk.js"
+    "revision": "42f22dc9de12567afb7e",
+    "url": "/saturn-v-infographic/static/js/2.1347f23f.chunk.js"
   },
   {
     "revision": "fdd30b2ab44ae896589b798d411d5c2c",
-    "url": "/saturn-v-infographic/static/js/2.932a4479.chunk.js.LICENSE.txt"
+    "url": "/saturn-v-infographic/static/js/2.1347f23f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7a12f5bd031d663cbedc",
-    "url": "/saturn-v-infographic/static/js/main.10bbcb59.chunk.js"
+    "revision": "6b61f8b33ec7f25af96b",
+    "url": "/saturn-v-infographic/static/js/main.52fd7096.chunk.js"
   },
   {
     "revision": "83999c408c8a705ac9f9",
@@ -94,5 +94,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "da04da188535f017a8b5f19f0184ad42",
     "url": "/saturn-v-infographic/static/media/StatueOfLiberty-min.da04da18.png"
+  },
+  {
+    "revision": "5e946c20186e33b608fbb3388fff6ff5",
+    "url": "/saturn-v-infographic/static/media/user.5e946c20.svg"
   }
 ]);
